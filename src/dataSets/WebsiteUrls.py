@@ -14,8 +14,11 @@ class WebsiteUrls:
     def load_Home_url(self, driver, url = urlHome):
         driver.get(url)
 
-    def close_page(self, timeInSeconds):
-        time.sleep(timeInSeconds)
+    def wait_for_xpath(self, xpath, timeout=10):
+        driver_manager.wait_for_element_xpath(xpath, timeout)
+
+    def close_page(self, xpath):
+        time.sleep(3)
         driver.close()
 
 
